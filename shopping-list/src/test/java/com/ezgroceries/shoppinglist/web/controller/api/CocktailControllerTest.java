@@ -1,7 +1,8 @@
 package com.ezgroceries.shoppinglist.web.controller.api;
 
 
-import com.ezgroceries.shoppinglist.service.CocktailServiceImpl;
+import com.ezgroceries.shoppinglist.service.CocktailService;
+import com.ezgroceries.shoppinglist.service.CocktailServiceDummyImpl;
 import com.ezgroceries.shoppinglist.web.controller.api.cocktail.CocktailController;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -27,14 +28,15 @@ public class CocktailControllerTest {
 	private MockMvc mockMvc;
 
 	@MockBean
-	private CocktailServiceImpl service;
+	private CocktailService service;
 
 	@Test
 	public void testHandleGetCocktails() throws Exception {
-		CocktailServiceImpl serviceDummy = new CocktailServiceImpl();
-		when(service.getDummyResources()).thenReturn(serviceDummy.getDummyResources());
+		String search = "russian";
+		CocktailServiceDummyImpl serviceDummy = new CocktailServiceDummyImpl();
+		when(service.searchCocktails(search)).thenReturn(serviceDummy.searchCocktails(search));
 		this.mockMvc
-				.perform(get("/cocktails").param("search", "Russian"))
+				.perform(get("/cocktails").param("search", search))
 				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))

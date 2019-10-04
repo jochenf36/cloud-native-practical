@@ -5,5 +5,5 @@ import com.ezgroceries.shoppinglist.model.CocktailResource;
 import java.util.List;
 
 public interface CocktailService {
-	List<CocktailResource> getDummyResources();
+	List<CocktailResource> searchCocktails(String search);
 }

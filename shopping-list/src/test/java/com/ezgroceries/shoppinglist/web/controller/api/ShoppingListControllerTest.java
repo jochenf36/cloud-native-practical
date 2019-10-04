@@ -1,6 +1,7 @@
 package com.ezgroceries.shoppinglist.web.controller.api;
 
 
+import com.ezgroceries.shoppinglist.service.CocktailService;
 import com.ezgroceries.shoppinglist.service.ShoppingListService;
 import com.ezgroceries.shoppinglist.service.ShoppingListServiceImpl;
 import com.ezgroceries.shoppinglist.web.controller.api.cocktail.model.CocktailReference;
@@ -33,19 +34,22 @@ public class ShoppingListControllerTest {
 	private MockMvc mockMvc;
 
 	@MockBean
-	private ShoppingListServiceImpl service;
-
 	private ShoppingListService shoppingListService;
+
+	@MockBean
+	private CocktailService cocktailService;
+
+	private ShoppingListService shoppingListServiceDummy;
 
 	@Before
 	public void initialize() {
-		shoppingListService = new ShoppingListServiceImpl();
+		shoppingListServiceDummy = new ShoppingListServiceImpl();
 	}
 
 	@Test
 	public void testHandlePostShoppingList() throws Exception {
 		String shoppingList = "Stephanie's birthday";
-		when(service.createShoppingList(shoppingList)).thenReturn(shoppingListService.createShoppingList(shoppingList));
+		when(shoppingListService.createShoppingList(shoppingList)).thenReturn(shoppingListServiceDummy.createShoppingList(shoppingList));
 		this.mockMvc
 				.perform(
 						post("/shopping-lists")
@@ -63,7 +67,7 @@ public class ShoppingListControllerTest {
 
 	@Test
 	public void testHandleGetAllShoppingLists() throws Exception {
-		when(service.getAllShoppingLists()).thenReturn(shoppingListService.getAllShoppingLists());
+		when(shoppingListService.getAllShoppingLists()).thenReturn(shoppingListServiceDummy.getAllShoppingLists());
 		this.mockMvc
 				.perform(get("/shopping-lists"))
 				.andDo(print())
@@ -75,7 +79,7 @@ public class ShoppingListControllerTest {
 	@Test
 	public void testHandleGetShoppingList() throws Exception {
 		String shoppingListId = "blabla";
-		when(service.getShoppingList(shoppingListId)).thenReturn(shoppingListService.getShoppingList(shoppingListId));
+		when(shoppingListService.getShoppingList(shoppingListId)).thenReturn(shoppingListServiceDummy.getShoppingList(shoppingListId));
 		this.mockMvc
 				.perform(get("/shopping-lists/" + shoppingListId))
 				.andDo(print())
@@ -89,7 +93,7 @@ public class ShoppingListControllerTest {
 	@Test
 	public void testHandleAddCocktails() throws Exception {
 		String shoppingListId = "blabla";
-		when(service.addCocktails(any(String.class), any(List.class))).thenReturn(shoppingListService.addCocktails(shoppingListId,
+		when(shoppingListService.addCocktails(any(String.class), any(List.class))).thenReturn(shoppingListServiceDummy.addCocktails(shoppingListId,
 				Arrays.asList(
 				new CocktailReference("23b3d85a-3928-41c0-a533-6538a71e17c4"),
 				new CocktailReference("d615ec78-fe93-467b-8d26-5d26d8eab073"))));

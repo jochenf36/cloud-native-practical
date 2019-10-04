@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class CocktailServiceImpl implements CocktailService {
-	public List<CocktailResource> getDummyResources() {
+public class CocktailServiceDummyImpl implements CocktailService {
+	public List<CocktailResource> searchCocktails(String search) {
 		return Arrays.asList(
 				new CocktailResource(
 						UUID.fromString("23b3d85a-3928-41c0-a533-6538a71e17c4"), "Margerita",

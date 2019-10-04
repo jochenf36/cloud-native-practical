@@ -22,6 +22,6 @@ public class CocktailController {
 
 	@GetMapping
 	public Resources<CocktailResource> get(@RequestParam String search) {
-		return new Resources<>(cocktailService.getDummyResources());
+		return new Resources<>(cocktailService.searchCocktails(search));
 	}
 }
