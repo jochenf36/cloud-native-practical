@@ -1,9 +1,12 @@
 package com.ezgroceries.shoppinglist.web.controller.api;
 
 
+import com.ezgroceries.shoppinglist.repository.cocktail.CocktailRepository;
+import com.ezgroceries.shoppinglist.repository.shoppingList.ShoppingListRepository;
 import com.ezgroceries.shoppinglist.service.CocktailService;
 import com.ezgroceries.shoppinglist.service.ShoppingListService;
-import com.ezgroceries.shoppinglist.service.ShoppingListServiceImpl;
+import com.ezgroceries.shoppinglist.service.ShoppingListServiceDummyImpl;
+import com.ezgroceries.shoppinglist.thirdPartyClients.cocktail.CocktailDBClient;
 import com.ezgroceries.shoppinglist.web.controller.api.cocktail.model.CocktailReference;
 import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.ShoppingListController;
 import org.junit.Before;
@@ -25,7 +28,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ShoppingListController.class)
@@ -39,11 +41,20 @@ public class ShoppingListControllerTest {
 	@MockBean
 	private CocktailService cocktailService;
 
+	@MockBean
+	private CocktailDBClient cocktailDBClient;
+
+	@MockBean
+	private CocktailRepository cocktailRepository;
+
+	@MockBean
+	private ShoppingListRepository shoppingListRepository;
+
 	private ShoppingListService shoppingListServiceDummy;
 
 	@Before
 	public void initialize() {
-		shoppingListServiceDummy = new ShoppingListServiceImpl();
+		shoppingListServiceDummy = new ShoppingListServiceDummyImpl();
 	}
 
 	@Test
