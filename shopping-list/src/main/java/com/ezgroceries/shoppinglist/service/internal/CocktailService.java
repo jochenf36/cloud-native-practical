@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist.service;
+package com.ezgroceries.shoppinglist.service.internal;
 
 import com.ezgroceries.shoppinglist.model.CocktailResource;
 

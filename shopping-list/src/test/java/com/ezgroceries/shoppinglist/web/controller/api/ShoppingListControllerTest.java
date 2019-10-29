@@ -1,13 +1,13 @@
 package com.ezgroceries.shoppinglist.web.controller.api;
 
 
-import com.ezgroceries.shoppinglist.repository.cocktail.CocktailRepository;
-import com.ezgroceries.shoppinglist.repository.shoppingList.ShoppingListRepository;
-import com.ezgroceries.shoppinglist.service.CocktailService;
-import com.ezgroceries.shoppinglist.service.ShoppingListService;
-import com.ezgroceries.shoppinglist.service.ShoppingListServiceDummyImpl;
-import com.ezgroceries.shoppinglist.thirdPartyClients.cocktail.CocktailDBClient;
-import com.ezgroceries.shoppinglist.web.controller.api.cocktail.model.CocktailReference;
+import com.ezgroceries.shoppinglist.persistence.repository.CocktailRepository;
+import com.ezgroceries.shoppinglist.persistence.repository.ShoppingListRepository;
+import com.ezgroceries.shoppinglist.service.internal.CocktailService;
+import com.ezgroceries.shoppinglist.service.internal.ShoppingListService;
+import com.ezgroceries.shoppinglist.service.internal.ShoppingListServiceDummyImpl;
+import com.ezgroceries.shoppinglist.service.external.CocktailDBClient;
+import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailReference;
 import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.ShoppingListController;
 import org.junit.Before;
 import org.junit.Test;

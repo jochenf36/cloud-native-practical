@@ -1,5 +1,6 @@
-package com.ezgroceries.shoppinglist.repository.shoppingList;
+package com.ezgroceries.shoppinglist.persistence.repository;
 
+import com.ezgroceries.shoppinglist.persistence.entity.ShoppingListEntity;
 import org.springframework.data.repository.Repository;
 
 import java.util.List;
