@@ -1,6 +1,4 @@
-package com.ezgroceries.shoppinglist.repository.shoppingList;
-
-import com.ezgroceries.shoppinglist.repository.cocktail.CocktailEntity;
+package com.ezgroceries.shoppinglist.persistence.entity;
 
 import javax.persistence.*;
 import java.util.Set;

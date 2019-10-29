@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist.web.controller.api.cocktail.model;
+package com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto;
 
 public class CocktailReference {
 	public String cocktailId;
