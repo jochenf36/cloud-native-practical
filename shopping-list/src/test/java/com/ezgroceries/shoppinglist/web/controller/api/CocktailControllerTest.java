@@ -1,11 +1,11 @@
 package com.ezgroceries.shoppinglist.web.controller.api;
 
 
-import com.ezgroceries.shoppinglist.repository.cocktail.CocktailRepository;
-import com.ezgroceries.shoppinglist.repository.shoppingList.ShoppingListRepository;
-import com.ezgroceries.shoppinglist.service.CocktailService;
-import com.ezgroceries.shoppinglist.service.CocktailServiceDummyImpl;
-import com.ezgroceries.shoppinglist.thirdPartyClients.cocktail.CocktailDBClient;
+import com.ezgroceries.shoppinglist.persistence.repository.CocktailRepository;
+import com.ezgroceries.shoppinglist.persistence.repository.ShoppingListRepository;
+import com.ezgroceries.shoppinglist.service.internal.CocktailService;
+import com.ezgroceries.shoppinglist.service.internal.CocktailServiceDummyImpl;
+import com.ezgroceries.shoppinglist.service.external.CocktailDBClient;
 import com.ezgroceries.shoppinglist.web.controller.api.cocktail.CocktailController;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;

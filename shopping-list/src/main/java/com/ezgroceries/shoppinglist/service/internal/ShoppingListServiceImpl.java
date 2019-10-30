@@ -1,12 +1,12 @@
-package com.ezgroceries.shoppinglist.service;
+package com.ezgroceries.shoppinglist.service.internal;
 
 import com.ezgroceries.shoppinglist.model.ShoppingListResource;
-import com.ezgroceries.shoppinglist.repository.cocktail.CocktailEntity;
-import com.ezgroceries.shoppinglist.repository.cocktail.CocktailRepository;
-import com.ezgroceries.shoppinglist.repository.shoppingList.ShoppingListEntity;
-import com.ezgroceries.shoppinglist.repository.shoppingList.ShoppingListRepository;
-import com.ezgroceries.shoppinglist.web.controller.api.cocktail.model.CocktailReference;
-import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.model.ShoppingList;
+import com.ezgroceries.shoppinglist.persistence.entity.CocktailEntity;
+import com.ezgroceries.shoppinglist.persistence.repository.CocktailRepository;
+import com.ezgroceries.shoppinglist.persistence.entity.ShoppingListEntity;
+import com.ezgroceries.shoppinglist.persistence.repository.ShoppingListRepository;
+import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailReference;
+import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingList;
 
 import java.util.List;
 import java.util.Set;
