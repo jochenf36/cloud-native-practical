@@ -1,13 +1,17 @@
 package config;
 
-import com.ezgroceries.shoppinglist.repository.cocktail.CocktailRepository;
-import com.ezgroceries.shoppinglist.repository.shoppingList.ShoppingListRepository;
-import com.ezgroceries.shoppinglist.service.CocktailService;
-import com.ezgroceries.shoppinglist.service.CocktailServiceImpl;
-import com.ezgroceries.shoppinglist.service.ShoppingListService;
-import com.ezgroceries.shoppinglist.service.ShoppingListServiceImpl;
-import com.ezgroceries.shoppinglist.thirdPartyClients.cocktail.CocktailDBClient;
+import com.ezgroceries.shoppinglist.persistence.repository.CocktailRepository;
+import com.ezgroceries.shoppinglist.persistence.repository.ShoppingListRepository;
+import com.ezgroceries.shoppinglist.service.external.CocktailDBClient;
+import com.ezgroceries.shoppinglist.service.internal.CocktailService;
+import com.ezgroceries.shoppinglist.service.internal.CocktailServiceImpl;
+import com.ezgroceries.shoppinglist.service.internal.ShoppingListService;
+import com.ezgroceries.shoppinglist.service.internal.ShoppingListServiceImpl;
+import org.apache.catalina.connector.Connector;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -33,5 +37,16 @@ public class ShoppingListConfig {
 	@Bean
 	public ShoppingListService shoppingListService(){
 		return new ShoppingListServiceImpl(shoppingListRepository, cocktailRepository);
+	}
+
+	//Custom tomcat configuration, we add an additional connector that allows http traffic next to https
+	@Bean
+	public ServletWebServerFactory servletContainer(@Value("${server.http.port}") int httpPort) {
+		Connector connector = new Connector(TomcatServletWebServerFactory.DEFAULT_PROTOCOL);
+		connector.setPort(httpPort);
+
+		TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
+		tomcat.addAdditionalTomcatConnectors(connector);
+		return tomcat;
 	}
 }

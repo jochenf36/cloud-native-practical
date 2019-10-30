@@ -1,7 +1,7 @@
-package com.ezgroceries.shoppinglist.repository.cocktail;
+package com.ezgroceries.shoppinglist.persistence.entity;
 
-import com.ezgroceries.shoppinglist.repository.shoppingList.ShoppingListEntity;
-import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.model.ShoppingList;
+import com.ezgroceries.shoppinglist.helper.StringSetConverter;
+import com.ezgroceries.shoppinglist.persistence.entity.ShoppingListEntity;
 
 import javax.persistence.*;
 import java.util.Set;
