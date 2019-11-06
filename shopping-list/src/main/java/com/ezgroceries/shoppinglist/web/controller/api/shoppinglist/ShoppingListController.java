@@ -1,10 +1,10 @@
 package com.ezgroceries.shoppinglist.web.controller.api.shoppinglist;
 
-import com.ezgroceries.shoppinglist.model.ShoppingListResource;
-import com.ezgroceries.shoppinglist.service.ShoppingListService;
-import com.ezgroceries.shoppinglist.web.controller.api.cocktail.model.CocktailReference;
-import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.model.ShoppingList;
-import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.model.ShoppingListReference;
+import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingListResource;
+import com.ezgroceries.shoppinglist.service.internal.ShoppingListService;
+import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailReference;
+import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingList;
+import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingListReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;

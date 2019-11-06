@@ -1,8 +1,8 @@
-package com.ezgroceries.shoppinglist.service;
+package com.ezgroceries.shoppinglist.service.internal;
 
-import com.ezgroceries.shoppinglist.model.ShoppingListResource;
-import com.ezgroceries.shoppinglist.web.controller.api.cocktail.model.CocktailReference;
-import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.model.ShoppingList;
+import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingListResource;
+import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailReference;
+import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingList;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
