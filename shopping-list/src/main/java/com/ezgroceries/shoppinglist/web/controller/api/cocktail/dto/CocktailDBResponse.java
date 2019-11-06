@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist.model;
+package com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto;
 
 import java.util.List;
 

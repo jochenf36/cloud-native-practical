@@ -1,0 +1,8 @@
+ALTER TABLE COCKTAIL
+ADD glass text;
+
+ALTER TABLE COCKTAIL
+ADD instructions text;
+
+ALTER TABLE COCKTAIL
+ADD imageLink text;

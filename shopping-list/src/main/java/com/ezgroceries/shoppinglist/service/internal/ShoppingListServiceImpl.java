@@ -1,10 +1,10 @@
 package com.ezgroceries.shoppinglist.service.internal;
 
-import com.ezgroceries.shoppinglist.model.ShoppingListResource;
 import com.ezgroceries.shoppinglist.persistence.entity.CocktailEntity;
 import com.ezgroceries.shoppinglist.persistence.repository.CocktailRepository;
 import com.ezgroceries.shoppinglist.persistence.entity.ShoppingListEntity;
 import com.ezgroceries.shoppinglist.persistence.repository.ShoppingListRepository;
+import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingListResource;
 import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailReference;
 import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingList;
 

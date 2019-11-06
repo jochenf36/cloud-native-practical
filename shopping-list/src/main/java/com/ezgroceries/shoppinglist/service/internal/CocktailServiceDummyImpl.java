@@ -1,6 +1,6 @@
 package com.ezgroceries.shoppinglist.service.internal;
 
-import com.ezgroceries.shoppinglist.model.CocktailResource;
+import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailResource;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

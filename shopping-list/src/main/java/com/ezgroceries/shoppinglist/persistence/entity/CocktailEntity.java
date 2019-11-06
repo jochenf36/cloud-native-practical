@@ -27,6 +27,15 @@ public class CocktailEntity{
 	@ManyToMany(mappedBy = "cocktails")
 	private Set<ShoppingListEntity> shoppingLists;
 
+	@Column
+	private String glass;
+
+	@Column
+	private String instructions;
+
+	@Column
+	private String imagelink;
+
 	public UUID getId() {
 		return id;
 	}
@@ -49,6 +58,30 @@ public class CocktailEntity{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getGlass() {
+		return glass;
+	}
+
+	public void setGlass(String glass) {
+		this.glass = glass;
+	}
+
+	public String getInstructions() {
+		return instructions;
+	}
+
+	public void setInstructions(String instructions) {
+		this.instructions = instructions;
+	}
+
+	public String getImagelink() {
+		return imagelink;
+	}
+
+	public void setImagelink(String imagelink) {
+		this.imagelink = imagelink;
 	}
 
 	public Set<String> getIngredients() {

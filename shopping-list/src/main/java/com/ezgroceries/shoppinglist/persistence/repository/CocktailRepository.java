@@ -9,4 +9,5 @@ import java.util.UUID;
 public interface CocktailRepository extends Repository<CocktailEntity, UUID> {
 	List<CocktailEntity> findByIdDrinkIn(List<String> ids);
 	CocktailEntity save(CocktailEntity cocktailEntity);
+	List<CocktailEntity> findByNameContainingIgnoreCase(String name);
 }

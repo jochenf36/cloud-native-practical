@@ -1,10 +1,10 @@
 package com.ezgroceries.shoppinglist.service.internal;
 
-import com.ezgroceries.shoppinglist.model.CocktailResource;
 import com.ezgroceries.shoppinglist.persistence.entity.CocktailEntity;
 import com.ezgroceries.shoppinglist.persistence.repository.CocktailRepository;
 import com.ezgroceries.shoppinglist.service.external.CocktailDBClient;
-import com.ezgroceries.shoppinglist.model.CocktailDBResponse;
+import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailResource;
+import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailDBResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,6 +54,9 @@ public class CocktailServiceImpl implements CocktailService {
 				newCocktailEntity.setIdDrink(drinkResource.getIdDrink());
 				newCocktailEntity.setName(drinkResource.getStrDrink());
 				newCocktailEntity.setIngredients(new HashSet(getIngredients(drinkResource)));
+				newCocktailEntity.setGlass(drinkResource.getStrGlass());
+				newCocktailEntity.setInstructions(drinkResource.getStrInstructions());
+				newCocktailEntity.setImagelink(drinkResource.getStrDrinkThumb());
 				cocktailEntity = cocktailRepository.save(newCocktailEntity);
 			}
 			return cocktailEntity;

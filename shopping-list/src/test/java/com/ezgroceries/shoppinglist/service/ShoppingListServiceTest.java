@@ -1,6 +1,6 @@
 package com.ezgroceries.shoppinglist.service;
 
-import com.ezgroceries.shoppinglist.model.ShoppingListResource;
+import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingListResource;
 import com.ezgroceries.shoppinglist.persistence.entity.CocktailEntity;
 import com.ezgroceries.shoppinglist.persistence.repository.CocktailRepository;
 import com.ezgroceries.shoppinglist.persistence.entity.ShoppingListEntity;

@@ -1,6 +1,6 @@
 package com.ezgroceries.shoppinglist.web.controller.api.shoppinglist;
 
-import com.ezgroceries.shoppinglist.model.ShoppingListResource;
+import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingListResource;
 import com.ezgroceries.shoppinglist.service.internal.ShoppingListService;
 import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailReference;
 import com.ezgroceries.shoppinglist.web.controller.api.shoppinglist.dto.ShoppingList;

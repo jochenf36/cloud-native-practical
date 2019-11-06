@@ -1,6 +1,6 @@
 package com.ezgroceries.shoppinglist.web.controller.api.cocktail;
 
-import com.ezgroceries.shoppinglist.model.CocktailResource;
+import com.ezgroceries.shoppinglist.web.controller.api.cocktail.dto.CocktailResource;
 import com.ezgroceries.shoppinglist.service.internal.CocktailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resources;
